@@ -1,0 +1,69 @@
+{
+  "com.epam.victor.model.Event" : [ {
+    "id" : 1,
+    "title" : "Event1",
+    "date" : "2023-12-23T23:07:52.530475800Z"
+  }, {
+    "id" : 2,
+    "title" : "Event2",
+    "date" : "2023-12-23T23:07:52.530475800Z"
+  }, {
+    "id" : 3,
+    "title" : "Event3",
+    "date" : "2023-12-23T23:07:52.530475800Z"
+  }, {
+    "id" : 4,
+    "title" : "Event4",
+    "date" : "2023-12-23T23:07:52.530475800Z"
+  }, {
+    "id" : 5,
+    "title" : "Event5",
+    "date" : "2023-12-23T23:07:52.530475800Z"
+  }, {
+    "id" : 6,
+    "title" : "Event6",
+    "date" : "2023-12-23T23:07:52.530475800Z"
+  }, {
+    "id" : 7,
+    "title" : "Event7",
+    "date" : "2023-12-24T00:49:56.685383700Z"
+  } ],
+  "com.epam.victor.model.Ticket" : [ {
+    "id" : 1,
+    "eventId" : 1,
+    "userId" : 1,
+    "category" : "PREMIUM",
+    "place" : 11
+  }, {
+    "id" : 2,
+    "eventId" : 2,
+    "userId" : 1,
+    "category" : "BAR",
+    "place" : 22
+  }, {
+    "id" : 3,
+    "eventId" : 3,
+    "userId" : 3,
+    "category" : "STANDARD",
+    "place" : 33
+  }, {
+    "id" : 4,
+    "eventId" : 1,
+    "userId" : 3,
+    "category" : "STANDARD",
+    "place" : 17
+  } ],
+  "com.epam.victor.model.User" : [ {
+    "id" : 1,
+    "name" : "User1",
+    "email" : "user1@mail.com"
+  }, {
+    "id" : 2,
+    "name" : "User2",
+    "email" : "user2@mail.com"
+  }, {
+    "id" : 3,
+    "name" : "USER333",
+    "email" : "user3@email.com"
+  } ]
+}
