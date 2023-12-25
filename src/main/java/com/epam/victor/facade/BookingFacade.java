@@ -6,6 +6,7 @@ import com.epam.victor.model.Event;
 import com.epam.victor.model.Ticket;
 import com.epam.victor.model.User;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public interface BookingFacade {
      * Gets event by its id.
      * @return Event.
      */
-    Event getEventById();
+    Event getEventById(Long id);
 
     /**
      * Get list of events by matching title. Title is matched using 'contains' approach.
@@ -39,7 +40,7 @@ public interface BookingFacade {
      * @param pageNum Pagination param. Number of the page to return. Starts from 1.
      * @return List of events.
      */
-    List<Event> getEventsForDay(Date day, int pageSize, int pageNum);
+    List<Event> getEventsForDay(LocalDate day, int pageSize, int pageNum);
 
     /**
      * Creates new event. Event id should be auto-generated.
@@ -66,7 +67,7 @@ public interface BookingFacade {
      * Gets user by its id.
      * @return User.
      */
-    User getUserById();
+    User getUserById(Long id);
 
     /**
      * Gets user by its email. Email is strictly matched.

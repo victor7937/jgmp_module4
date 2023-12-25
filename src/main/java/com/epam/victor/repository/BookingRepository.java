@@ -7,6 +7,7 @@ import com.epam.victor.storage.ObjectStorage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public abstract class BookingRepository<T extends BookingEntity> implements CrudRepository<T, Long>, PageableRepository<T> {
 
@@ -68,7 +69,17 @@ public abstract class BookingRepository<T extends BookingEntity> implements Crud
     @Override
     public List<T> findAllOfPage(int pageSize, int pageNum) {
         List<T> entityList = findAll();
-        int count = count();
+        return findPaged(pageSize, pageNum, entityList);
+    }
+
+    public List<T> findAllOfPageWithCondition(int pageSize, int pageNum, Predicate<T> predicate) {
+        List<T> entityList = findAll().stream().filter(predicate).toList();
+        return findPaged(pageSize, pageNum, entityList);
+
+    }
+
+    private List<T> findPaged (int pageSize, int pageNum, List<T> entityList){
+        int count = entityList.size();
         int startIndex = pageNum * pageSize;
         if (startIndex >= count) {
             return new ArrayList<>();
@@ -79,5 +90,12 @@ public abstract class BookingRepository<T extends BookingEntity> implements Crud
         else {
             return entityList.subList(startIndex, startIndex + pageSize);
         }
+    }
+
+    public Long newId (){
+        return findAll().stream()
+                .map(BookingEntity::getId)
+                .max(Long::compare)
+                .orElse(1L) + 1;
     }
 }

@@ -52,6 +52,12 @@
     "userId" : 3,
     "category" : "STANDARD",
     "place" : 17
+  }, {
+    "id" : 5,
+    "eventId" : 5,
+    "userId" : 1,
+    "category" : "BAR",
+    "place" : 11
   } ],
   "com.epam.victor.model.User" : [ {
     "id" : 1,

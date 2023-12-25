@@ -52,6 +52,12 @@
     "userId" : 3,
     "category" : "STANDARD",
     "place" : 17
+  }, {
+    "id" : 5,
+    "eventId" : 5,
+    "userId" : 1,
+    "category" : "BAR",
+    "place" : 11
   } ],
   "com.epam.victor.model.User" : [ {
     "id" : 1,
@@ -63,7 +69,7 @@
     "email" : "user2@mail.com"
   }, {
     "id" : 3,
-    "name" : "USER3",
+    "name" : "USER333",
     "email" : "user3@email.com"
   } ]
 }
