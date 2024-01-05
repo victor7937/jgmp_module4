@@ -1,0 +1,45 @@
+{
+  "com.epam.victor.model.Event" : [ {
+    "id" : 1,
+    "title" : "Event1",
+    "date" : "2024-01-01T00:00:00Z"
+  }, {
+    "id" : 2,
+    "title" : "Event2",
+    "date" : "2024-01-02T00:00:00Z"
+  }, {
+    "id" : 3,
+    "title" : "Event3",
+    "date" : "2024-01-01T00:00:00Z"
+  }, {
+    "id" : 4,
+    "title" : "Event4",
+    "date" : "2024-01-02T00:00:00Z"
+  }, {
+    "id" : 5,
+    "title" : "Event4",
+    "date" : "2024-01-03T00:00:00Z"
+  } ],
+  "com.epam.victor.model.Ticket" : [ {
+    "id" : 1,
+    "eventId" : 1,
+    "userId" : 1,
+    "category" : "PREMIUM",
+    "place" : 11
+  }, {
+    "id" : 2,
+    "eventId" : 2,
+    "userId" : 1,
+    "category" : "BAR",
+    "place" : 22
+  } ],
+  "com.epam.victor.model.User" : [ {
+    "id" : 1,
+    "name" : "User1",
+    "email" : "user1@mail.com"
+  }, {
+    "id" : 2,
+    "name" : "User2",
+    "email" : "user2@mail.com"
+  } ]
+}

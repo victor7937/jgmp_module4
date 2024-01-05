@@ -36,6 +36,7 @@ public class EvenServiceImpl implements EventService {
 
     @Override
     public List<Event> getOfDate(LocalDate day, int pageSize, int pageNum) {
+
         return eventRepository.findAllOfPageWithCondition(pageSize, pageNum,
                 e -> LocalDate.ofInstant(e.getDate(), ZoneOffset.UTC).equals(day));
     }

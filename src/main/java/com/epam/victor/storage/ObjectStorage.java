@@ -31,7 +31,7 @@ public class ObjectStorage{
 
     public enum Classes {
         TICKET(Ticket.class), EVENT(Event.class), USER(User.class);
-        public Class<? extends BookingEntity> entityClass;
+        public final Class<? extends BookingEntity> entityClass;
 
         Classes(Class<? extends BookingEntity> clazz){
             this.entityClass = clazz;
@@ -41,7 +41,7 @@ public class ObjectStorage{
 
 
     @PostConstruct
-    private void initStorage(){
+    public void initStorage(){
         try {
             entityMap = bookingJsonTool.fromJson(filePath);
             //System.out.println("Deserialize " + entityMap);
@@ -54,7 +54,7 @@ public class ObjectStorage{
     }
 
     @PreDestroy
-    void backupStorage(){
+    public void backupStorage(){
         try {
             //System.out.println(entityMap);
             bookingJsonTool.toJson(entityMap, filePath);
