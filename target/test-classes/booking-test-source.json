@@ -32,7 +32,21 @@
     "userId" : 1,
     "category" : "BAR",
     "place" : 22
-  } ],
+  },
+    {
+      "id" : 3,
+      "eventId" : 2,
+      "userId" : 3,
+      "category" : "BAR",
+      "place" : 22
+    },
+    {
+      "id" : 4,
+      "eventId" : 2,
+      "userId" : 1,
+      "category" : "BAR",
+      "place" : 23
+    }],
   "com.epam.victor.model.User" : [ {
     "id" : 1,
     "name" : "User1",
@@ -41,5 +55,17 @@
     "id" : 2,
     "name" : "User2",
     "email" : "user2@mail.com"
-  } ]
+  },
+    {
+      "id" : 3,
+      "name" : "User3",
+      "email" : "user3@mail.com"
+    },
+    {
+      "id" : 4,
+      "name" : "User3",
+      "email" : "user4@mail.com"
+    }
+
+  ]
 }

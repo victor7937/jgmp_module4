@@ -18,7 +18,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.epam.victor.storage.ObjectStorage.Classes.*;
+import static com.epam.victor.storage.ObjectStorage.Classes.EVENT;
+import static com.epam.victor.storage.ObjectStorage.Classes.TICKET;
+import static com.epam.victor.storage.ObjectStorage.Classes.USER;
+
 
 public class MapDeserializer extends StdDeserializer<Map<String, List<? extends BookingEntity>>> {
 

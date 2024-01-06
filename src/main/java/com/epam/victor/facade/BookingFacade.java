@@ -106,6 +106,8 @@ public interface BookingFacade {
      */
     boolean deleteUser(long userId);
 
+    Ticket getTicketById(Long id);
+
     /**
      * Book ticket for a specified event on behalf of specified user.
      * @param userId User Id.

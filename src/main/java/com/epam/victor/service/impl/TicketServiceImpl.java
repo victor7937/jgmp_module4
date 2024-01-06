@@ -5,6 +5,7 @@ import com.epam.victor.model.Ticket;
 import com.epam.victor.model.User;
 import com.epam.victor.repository.impl.TicketRepository;
 import com.epam.victor.service.TicketService;
+import com.epam.victor.service.exception.IdNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -46,5 +47,11 @@ public class TicketServiceImpl implements TicketService {
         }
         ticketRepository.delete(ticketId);
         return true;
+    }
+
+    @Override
+    public Ticket getById(long id) {
+        return ticketRepository.findById(id).orElseThrow(
+                () -> new IdNotFoundException("Ticket with id " + id + "not found"));
     }
 }

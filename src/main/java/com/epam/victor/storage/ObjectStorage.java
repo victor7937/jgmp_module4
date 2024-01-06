@@ -30,7 +30,9 @@ public class ObjectStorage{
     }
 
     public enum Classes {
-        TICKET(Ticket.class), EVENT(Event.class), USER(User.class);
+        TICKET(Ticket.class),
+        EVENT(Event.class),
+        USER(User.class);
         public final Class<? extends BookingEntity> entityClass;
 
         Classes(Class<? extends BookingEntity> clazz){

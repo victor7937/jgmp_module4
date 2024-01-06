@@ -10,16 +10,15 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.ZoneOffset;
-import java.util.Date;
 import java.util.List;
 
 @Component
-public class EvenServiceImpl implements EventService {
+public class EventServiceImpl implements EventService {
 
     private final EventRepository eventRepository;
 
     @Autowired
-    public EvenServiceImpl(EventRepository eventRepository) {
+    public EventServiceImpl(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
     }
 
@@ -36,7 +35,6 @@ public class EvenServiceImpl implements EventService {
 
     @Override
     public List<Event> getOfDate(LocalDate day, int pageSize, int pageNum) {
-
         return eventRepository.findAllOfPageWithCondition(pageSize, pageNum,
                 e -> LocalDate.ofInstant(e.getDate(), ZoneOffset.UTC).equals(day));
     }

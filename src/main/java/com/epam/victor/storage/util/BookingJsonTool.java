@@ -26,7 +26,7 @@ public class BookingJsonTool {
     }
 
     public Map<String, List<? extends BookingEntity>> fromJson (String path) throws IOException {
-        return objectMapper.readValue(new File(path), new TypeReference<Map<String,List<? extends BookingEntity>>>(){});
+        return objectMapper.readValue(new File(path), new TypeReference<>() {});
     }
 
 
