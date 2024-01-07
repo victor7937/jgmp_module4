@@ -4,10 +4,11 @@ import com.epam.victor.model.BookingEntity;
 import com.epam.victor.model.Event;
 import com.epam.victor.model.Ticket;
 import com.epam.victor.model.User;
-import com.epam.victor.storage.util.BookingJsonTool;
+import com.epam.victor.storage.util.jackson.BookingJsonTool;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
+@Slf4j
 public class ObjectStorage{
 
     @Value("${booking.json.path}")
@@ -36,9 +38,12 @@ public class ObjectStorage{
     public void initStorage(){
         try {
             entityMap = bookingJsonTool.fromJson(filePath);
+            log.info("Storage was initialized from json file " + filePath );
         } catch (JsonProcessingException e) {
+            log.error("Jackson Exception while taking storage from the file ", e);
             throw new RuntimeException("Jackson Exception", e);
         } catch (IOException e) {
+            log.error("IOException Exception while taking storage from the file ", e);
             throw new RuntimeException(e);
         }
     }
@@ -47,9 +52,12 @@ public class ObjectStorage{
     public void backupStorage(){
         try {
             bookingJsonTool.toJson(entityMap, filePath);
+            log.info("Storage was backed up to json file " + filePath);
         } catch (JsonProcessingException e) {
-                throw new RuntimeException("Jackson Exception", e);
+            log.error("Jackson Exception while writing storage to the file ", e);
+            throw new RuntimeException("Jackson Exception", e);
         } catch (IOException e) {
+            log.error("IOException Exception while writing storage to the file ", e);
             throw new RuntimeException(e);
         }
     }

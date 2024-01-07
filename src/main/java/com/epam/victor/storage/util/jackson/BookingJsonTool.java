@@ -1,6 +1,7 @@
-package com.epam.victor.storage.util;
+package com.epam.victor.storage.util.jackson;
 
 import com.epam.victor.model.BookingEntity;
+import com.epam.victor.storage.util.jackson.ObjectMapperConfigurer;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class BookingJsonTool {
     private final ObjectMapper objectMapper;
 
     @Autowired
-    public BookingJsonTool(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
+    public BookingJsonTool(ObjectMapperConfigurer objectMapperConfigurer) {
+        this.objectMapper = objectMapperConfigurer.getObjectMapper();
     }
 
     public void toJson (Map<String, List<BookingEntity>> map, String path) throws IOException {
@@ -32,8 +33,7 @@ public class BookingJsonTool {
     }
 
     public Map<String, List<BookingEntity>> fromJson (String path) throws IOException {
-        return objectMapper.readValue(new File(path), new TypeReference<>() {
-        });
+        return objectMapper.readValue(new File(path), new TypeReference<>() {});
     }
 
 

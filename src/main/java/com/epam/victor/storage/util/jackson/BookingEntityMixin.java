@@ -1,4 +1,4 @@
-package com.epam.victor.storage.util;
+package com.epam.victor.storage.util.jackson;
 
 import com.epam.victor.model.Event;
 import com.epam.victor.model.Ticket;

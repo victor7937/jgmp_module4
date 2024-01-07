@@ -1,0 +1,32 @@
+
+08-01-2024 00:23:58 INFO  ObjectMapperConfigurer:25 - Object Mapper configuration start
+08-01-2024 00:23:58 INFO  ObjectMapperConfigurer:37 - Deserializer module was registered
+08-01-2024 00:23:58 INFO  ObjectMapperConfigurer:38 - Object Mapper was configured successfully
+08-01-2024 00:23:58 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:58 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:58 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:58 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:41 - Storage was initialized from json file src/test/resources/booking-test.json
+08-01-2024 00:23:59 INFO  ObjectStorage:55 - Storage was backed up to json file src/test/resources/booking-test.json
+08-01-2024 00:24:46 INFO  ObjectMapperConfigurer:25 - Object Mapper configuration start
+08-01-2024 00:24:46 INFO  ObjectMapperConfigurer:37 - Deserializer module was registered
+08-01-2024 00:24:46 INFO  ObjectMapperConfigurer:38 - Object Mapper was configured successfully
+08-01-2024 00:24:46 INFO  ObjectStorage:41 - Storage was initialized from json file src/main/resources/booking.json
+08-01-2024 00:24:46 INFO  ObjectStorage:55 - Storage was backed up to json file src/main/resources/booking.json
