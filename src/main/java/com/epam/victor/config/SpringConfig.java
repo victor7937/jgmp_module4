@@ -1,5 +1,7 @@
 package com.epam.victor.config;
 
+import com.epam.victor.model.BookingEntity;
+import com.epam.victor.storage.util.BookingEntityMixin;
 import com.epam.victor.storage.util.MapDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -21,6 +23,9 @@ public class SpringConfig {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        objectMapper.addMixIn(BookingEntity.class, BookingEntityMixin.class);
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+
         MapDeserializer mapDeserializer = new MapDeserializer();
         mapDeserializer.setObjectMapper(objectMapper);
         SimpleModule module = new SimpleModule();

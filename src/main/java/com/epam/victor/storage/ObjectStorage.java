@@ -13,14 +13,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class ObjectStorage{
 
     @Value("${booking.json.path}")
     public String filePath;
-    private Map<String, List<? extends BookingEntity>> entityMap;
+    private Map<String, List<BookingEntity>> entityMap;
 
     private final BookingJsonTool bookingJsonTool;
 
@@ -29,25 +32,10 @@ public class ObjectStorage{
         this.bookingJsonTool = bookingJsonTool;
     }
 
-    public enum Classes {
-        TICKET(Ticket.class),
-        EVENT(Event.class),
-        USER(User.class);
-        public final Class<? extends BookingEntity> entityClass;
-
-        Classes(Class<? extends BookingEntity> clazz){
-            this.entityClass = clazz;
-        }
-
-    }
-
-
     @PostConstruct
     public void initStorage(){
         try {
             entityMap = bookingJsonTool.fromJson(filePath);
-            //System.out.println("Deserialize " + entityMap);
-
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Jackson Exception", e);
         } catch (IOException e) {
@@ -58,7 +46,6 @@ public class ObjectStorage{
     @PreDestroy
     public void backupStorage(){
         try {
-            //System.out.println(entityMap);
             bookingJsonTool.toJson(entityMap, filePath);
         } catch (JsonProcessingException e) {
                 throw new RuntimeException("Jackson Exception", e);
@@ -67,6 +54,13 @@ public class ObjectStorage{
         }
     }
 
+    public static Map<String, List<BookingEntity>> createEmptyMap(){
+        Map<String, List<BookingEntity>> map = new HashMap<>();
+        map.put(User.class.getName(), new ArrayList<>());
+        map.put(Event.class.getName(), new ArrayList<>());
+        map.put(Ticket.class.getName(), new ArrayList<>());
+        return map;
+    }
 
     public List<? extends BookingEntity> getEntityList(Class<? extends BookingEntity> clazz){
         return entityMap.get(clazz.getName());

@@ -63,6 +63,11 @@ public class FacadeTest {
         }
 
         @Test
+        void notExistingIdShouldThrowException(){
+            assertThrows(IdNotFoundException.class, () -> bookingFacade.getEventById(6L));
+        }
+
+        @Test
         void allEventsOfDayShouldBeTaken(){
             List<Event> expected = List.of(EVENT_COLLECTION.get(1), EVENT_COLLECTION.get(3));
             List<Event> actual = bookingFacade.getEventsForDay(LocalDate.of(2024,01,02),5,0);
@@ -121,6 +126,11 @@ public class FacadeTest {
         }
 
         @Test
+        void notExistingIdShouldThrowException(){
+            assertThrows(IdNotFoundException.class, () -> bookingFacade.getUserById(5L));
+        }
+
+        @Test
         void userShouldBeCreated() {
             User newUser = new User(5L,"User5","user5@mail.com");
             bookingFacade.createUser(newUser);
@@ -145,6 +155,23 @@ public class FacadeTest {
             assertThrows(IdNotFoundException.class, () -> bookingFacade.getUserById(userId));
         }
 
+        @Test
+        void userShouldBeGotByEmail(){
+            User expected = USER_COLLECTION.getFirst();
+            User actual = bookingFacade.getUserByEmail(expected.getEmail());
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        void usersShouldBeGotByName(){
+            String userName = "User3";
+            List<User> expected = USER_COLLECTION.stream().filter(u -> u.getName().equals("User3")).toList();
+            List<User> actual = bookingFacade.getUsersByName(userName,5,0);
+            assertEquals(expected, actual);
+        }
+
+
+
 
     }
 
@@ -163,6 +190,11 @@ public class FacadeTest {
             Ticket expected = TICKET_COLLECTION.getFirst();
             Ticket actual = bookingFacade.getTicketById(1L);
             assertEquals(expected, actual);
+        }
+
+        @Test
+        void notExistingIdShouldThrowException(){
+            assertThrows(IdNotFoundException.class, () -> bookingFacade.getTicketById(5L));
         }
         @Test
         void ticketShouldBeBooked(){

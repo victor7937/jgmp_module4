@@ -14,13 +14,6 @@
   "name" : "aaaa",
   "email" : "bbb"
 }, {
-  "@type" : "com.epam.victor.model.Ticket",
-  "id" : 2,
-  "eventId" : 5,
-  "userId" : 1,
-  "category" : "BAR",
-  "place" : 11
-}, {
   "@type" : "com.epam.victor.model.Event",
   "id" : 1,
   "title" : "aa",

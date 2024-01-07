@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -21,12 +22,18 @@ public class BookingJsonTool {
         this.objectMapper = objectMapper;
     }
 
-    public void toJson (Map<String, List<? extends BookingEntity>> map, String path) throws IOException {
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), map);
+    public void toJson (Map<String, List<BookingEntity>> map, String path) throws IOException {
+        List<? extends BookingEntity> entityList = map
+                .values()
+                .stream()
+                .flatMap(Collection::stream)
+                .toList();
+        objectMapper.writerFor(new TypeReference<List<BookingEntity>>() {}).writeValue(new File(path), entityList);
     }
 
-    public Map<String, List<? extends BookingEntity>> fromJson (String path) throws IOException {
-        return objectMapper.readValue(new File(path), new TypeReference<>() {});
+    public Map<String, List<BookingEntity>> fromJson (String path) throws IOException {
+        return objectMapper.readValue(new File(path), new TypeReference<>() {
+        });
     }
 
 

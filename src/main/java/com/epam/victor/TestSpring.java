@@ -20,9 +20,9 @@ public class TestSpring {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         BookingFacade bookingFacade = context.getBean(BookingFacade.class);
-        System.out.println(bookingFacade.getEventsForDay(LocalDate.of(2023,12,23),5,0));
-        System.out.println(bookingFacade.bookTicket(1,5,11, Ticket.Category.BAR));
-        System.out.println(bookingFacade.getBookedTickets(bookingFacade.getUserById(1L),5,0));
+//        System.out.println(bookingFacade.getEventsForDay(LocalDate.of(2023,12,23),5,0));
+//        System.out.println(bookingFacade.bookTicket(1,5,11, Ticket.Category.BAR));
+//        System.out.println(bookingFacade.getBookedTickets(bookingFacade.getUserById(1L),5,0));
         Runtime.getRuntime().addShutdownHook(new Thread(context::close));
     }
 }
